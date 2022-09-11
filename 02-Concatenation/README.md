@@ -10,7 +10,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Fizz_buzz):
 
 ## The Hydra
 
-A simple implementation of this program uses an `if-hydra` with division by 3 checked for no remainder first, then division by 5. Besides raising the specter of the Hydra, it also checks the division by 5 twice, which is inefficient.
+A simple implementation of this program uses an `if-hydra` with division by 3 checked for no remainder first, then division by 5. Besides raising the specter of the Hydra, it also checks the division by 5 in two places - which defies the "[DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)" rule.
 
 ```python
 def fizzbuzz(n):
@@ -28,22 +28,22 @@ def fizzbuzz(n):
 One solution is the rule-based solution we saw in the leap year example: 
 
 ```python
-def fizzbuzz(n):
-    fizz = "Fizz" if n % 3 == 0 else ""
-    buzz = "Buzz" if n % 5 == 0 else ""
-    return fizz+buzz or n # takes advantage of the 'falsey' nature of the empty string
+def fizzbuzz_rules(n):
+    if n % 15 == 0: return "FizzBuzz"
+    if n % 3 == 0: return "Fizz"
+    if n % 5 == 0: return "Buzz"
+    return n
 ```
 
 This has the advantage of checking the division by both 3 and 5 by checking for a division by 15 - which is the product of 3 and 5. If this doesn't return a result, then the next rule - division by 3 - is checked, then division by 5, and finally if none pass, then the number is returned.
 
 However, this overlooks the fact that if both the division by 3 and division by 5 rules pass, "FizzBuzz" is the mere concatenation of these two rules. If neither rule "fires" then the number is returned instead.
 
-```js
-function fizzbuzz(n) {
-    let fizz = n % 3 === 0 ? "Fizz" : "";
-    let buzz = n % 5 === 0 ? "Buzz" : "";
-    return fizz+buzz || ("" + n);
-}
+```python
+def fizzbuzz(n):
+    fizz = "Fizz" if n % 3 == 0 else ""
+    buzz = "Buzz" if n % 5 == 0 else ""
+    return fizz+buzz or n # takes advantage of the 'falsey' nature of the empty string
 ```
 
 ## The Moral

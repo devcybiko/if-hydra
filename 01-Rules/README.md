@@ -1,4 +1,4 @@
-# Rule-based swords: Leap Year
+# Rule-based Swords: Leap Year
 
 The basic rules for leap year calculation are:
 
