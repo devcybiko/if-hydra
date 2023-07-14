@@ -3,7 +3,7 @@ const process = require("process");
 
 function die(msg) {
     console.log("\n", msg, "\n")
-    process.exit();
+    process.exit(1);
 }
 
 function get_name(s) {

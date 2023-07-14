@@ -2,7 +2,7 @@
 
 def die(msg):
     print("\n", msg, "\n")
-    exit()
+    exit(1)
 
 def get_name(s):
     if s == 'r': return "Rock"

@@ -2,7 +2,7 @@
 
 def die(msg):
     print("\n", msg, "\n")
-    exit()
+    exit(1)
 
 name_keys = ["r", "p", "s", "l", "x"]
 name_values = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]

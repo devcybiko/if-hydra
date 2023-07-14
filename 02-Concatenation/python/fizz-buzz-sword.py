@@ -13,7 +13,7 @@ def fizzbuzz_rules(n):
 
 def die(msg):
     print("\n", msg, "\n")
-    exit()
+    exit(1)
 
 def testFizzBuzz(n, expected):
     actual = str(fizzbuzz(n)) # convert it to a string

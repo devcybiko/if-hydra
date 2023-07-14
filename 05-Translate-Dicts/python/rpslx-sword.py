@@ -2,7 +2,7 @@
 
 def die(msg):
     print("\n", msg, "\n")
-    exit()
+    exit(1)
 
 names = {
     "r": "Rock", 

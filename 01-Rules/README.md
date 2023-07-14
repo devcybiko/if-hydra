@@ -33,10 +33,10 @@ Each rule can be assigned to a single variable. This makes the rule logic much e
 
 ```python
 def is_leapyear(year):
-    rule1 = year % 4 == 0
-    rule2 = year % 100 == 0
-    rule3 = year % 400 == 0
-    return rule1 and not rule2 or rule3
+    every_four_years = year % 4 == 0
+    century_year = year % 100 == 0
+    every_four_hundred_years = year % 400 == 0
+    return every_four_years and not century_year or every_four_hundred_years
 ```
 
 Even easier is a single line that expresses all the rules in a single expression. (Note the use of parentheses to make the order of operations clear.)

@@ -4,10 +4,10 @@ def is_leapyear(year):
     return (year % 4 == 0) and not (year % 100 == 0) or (year % 400 == 0)
 
 def is_leapyear_rule_based(year):
-    rule1 = year % 4 == 0
-    rule2 = year % 100 == 0
-    rule3 = year % 400 == 0
-    return rule1 and not rule2 or rule3
+    every_four_years = year % 4 == 0
+    century_year = year % 100 == 0
+    every_four_hundred_years = year % 400 == 0
+    return every_four_years and not century_year or every_four_hundred_years
 
 def test_is_leapyear(year, expected):
     result = "is a leap year" if expected else "is not a leap year"
@@ -15,7 +15,7 @@ def test_is_leapyear(year, expected):
         print(f"correct: {year} {result}, as expected");
     else:
         print(f"\nwrong: {year} {result} - your function is broken\n")
-        exit()
+        exit(1)
 
 def main():
     #the turn of the 20th century

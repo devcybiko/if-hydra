@@ -6,10 +6,10 @@ function isLeapyear(year) {
 }
 
 function isLeapyear_ruleBased(year) {
-    let rule1 = year % 4 === 0
-    let rule2 = year % 100 === 0
-    let rule3 = year % 400 === 0
-    return rule1 && !rule2 || rule3;
+    let everyFourYears = year % 4 === 0
+    let centuryYear = year % 100 === 0
+    let everyFourHundredYears = year % 400 === 0
+    return everyFourYears && !centuryYear || everyFourHundredYears;
 }
 
 function testIsLeapyear(year, expected) {
@@ -18,7 +18,7 @@ function testIsLeapyear(year, expected) {
         console.log(`correct: ${year} ${result}, as expected`);
     }else {
         console.log(`\nwrong: ${year} ${result} - your function reported otherwise\n`);
-        process.exit()
+        process.exit(1)
     }
 }
     

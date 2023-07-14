@@ -18,7 +18,7 @@ def test_is_leapyear(year, expected):
         print(f"correct: {year} {result}, as expected");
     else:
         print(f"\nwrong: {year} {result} - your function reported otherwise\n")
-        exit()
+        exit(1)
 
 def main():
     #the turn of the 20th century

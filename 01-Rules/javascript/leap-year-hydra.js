@@ -23,7 +23,7 @@ function testIsLeapyear(year, expected) {
         console.log(`correct: ${year} ${result}, as expected`);
     }else {
         console.log(`\nwrong: ${year} ${result} - your function reported otherwise\n`);
-        process.exit()
+        process.exit(1)
     }
 }
 

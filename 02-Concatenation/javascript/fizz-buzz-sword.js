@@ -16,7 +16,7 @@ function fizzbuzz_rules(n) {
 function die(msg) {
     const process = require('process');
     console.log("\n", msg, "\n");
-    process.exit();
+    process.exit(1);
 }
 
 function testFizzBuzz(n, expected) {

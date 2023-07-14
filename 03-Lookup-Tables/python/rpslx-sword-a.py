@@ -4,11 +4,19 @@ def die(msg):
     print("\n", msg, "\n")
     exit(1)
 
-winners = ["rs", "pr", "sp", "rl", "lx", "xs", "sl", "lp", "px", "xr"]
+winners = [
+    [ 0, 2, 1, 1, 2], #r
+    [ 1, 0, 2, 2, 1], #p
+    [ 2, 1, 0, 1, 2], #s
+    [ 2, 1, 2, 0, 1], #l
+    [ 1, 2, 1, 2, 0], #x
+]
+
+convert = {"r": 0, "p": 1, "s": 2, "l": 3, "x": 4}
 def winner(player1, player2):
-    if player1 == player2: return 0 ### tie "guard"
-    if player1+player2 in winners: return 1
-    else: return 2
+    p1 = convert[player1]
+    p2 = convert[player2]
+    return winners[p1][p2]
 
 def testWinner(player1, player2, expected):
     actual = winner(player1, player2)
